@@ -44,7 +44,7 @@ def combine_weights(in_list):
 
 def combine_weights2a(in_list):
     accumulator = []
-    stack = [x for x in in_list]
+    stack = [item for item in in_list]
 
     while len(stack) > 0:
         entry = stack.pop()
@@ -53,7 +53,8 @@ def combine_weights2a(in_list):
         elif entry is None:
             pass
         elif isinstance(entry, list):
-            [stack.append(subentry) for subentry in entry]
+            for subentry in entry:
+                stack.append(subentry)
         else:
             raise Exception
 
